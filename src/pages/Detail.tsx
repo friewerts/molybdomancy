@@ -28,18 +28,14 @@ export default function Detail() {
         </div>
         
         <div className="detail-content">
-          <p className="main-meaning">{shape.meaning}</p>
+
           
           <div className="extended-meaning">
-            <h3>Tiefergehende Bedeutung</h3>
+            <h3>Die Botschaft des Orakels</h3>
             <p>
-              Das Symbol "{shape.name}" ist ein traditionelles Zeichen in der Wahrsagerei. 
-              {shape.category === 'luck' && ' Es deutet auf eine glückhafte Fügung des Schicksals hin.'}
-              {shape.category === 'warning' && ' Es mahnt zur Vorsicht und Aufmerksamkeit.'}
-              {shape.category === 'love' && ' Es steht in enger Verbindung mit Herzensangelegenheiten.'}
-              {shape.category === 'finance' && ' Es betrifft materielle Aspekte und Wohlstand.'}
+              {shape.meaning}
               <br/><br/>
-              Achten Sie auf die genauen Umrisse: Sind sie klar oder verschwommen? Eine klare Form verstärkt die positive Bedeutung.
+              Achten Sie auf die genauen Umrisse: Sind sie klar oder verschwommen? Eine klare Form verstärkt die positive Energie.
             </p>
           </div>
           
