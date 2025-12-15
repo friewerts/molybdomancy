@@ -3,4 +3,5 @@ export interface Interpretation {
   name: string;
   meaning: string;
   category?: 'love' | 'luck' | 'finance' | 'general' | 'warning';
+  synonyms?: string[];
 }

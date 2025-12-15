@@ -12,7 +12,8 @@ export default function Home() {
     const q = query.toLowerCase().trim();
     if (!q) return allInterpretations;
     return allInterpretations.filter(item => 
-      item.name.toLowerCase().includes(q)
+      item.name.toLowerCase().includes(q) ||
+      item.synonyms?.some(s => s.toLowerCase().includes(q))
     );
   }, [query]);
 

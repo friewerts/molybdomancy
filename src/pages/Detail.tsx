@@ -42,6 +42,20 @@ export default function Detail() {
               Achten Sie auf die genauen Umrisse: Sind sie klar oder verschwommen? Eine klare Form verstärkt die positive Bedeutung.
             </p>
           </div>
+          
+          <div className="similar-shapes">
+            <h3>Ähnliche Formen</h3>
+            <div className="similar-grid">
+              {allInterpretations
+                .filter(i => i.category === shape.category && i.id !== shape.id)
+                .slice(0, 3)
+                .map(similar => (
+                  <Link to={`/interpretation/${similar.id}`} key={similar.id} className="similar-item">
+                    {similar.name}
+                  </Link>
+                ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
