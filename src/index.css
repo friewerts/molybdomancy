@@ -165,8 +165,118 @@ h1 {
 .cat-finance { border-left: 3px solid #ffd700; }
 .cat-general { border-left: 3px solid #a0a0a0; }
 
+/* Router Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.shape-card-link {
+  display: block;
+  text-decoration: none;
+}
+
+.click-hint {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Detail Page */
+.detail-page {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  padding-top: 2rem;
+}
+
+.back-button {
+  display: inline-block;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  color: var(--accent-silver);
+  transition: transform 0.2s;
+}
+
+.back-button:hover {
+  transform: translateX(-5px);
+  color: var(--accent-gold);
+}
+
+.detail-card {
+  background: rgba(13, 15, 26, 0.8);
+  border: 1px solid var(--accent-gold);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Category Glow Background in Detail */
+.detail-card.cat-love { box-shadow: 0 0 50px rgba(255, 105, 180, 0.1); border-color: rgba(255, 105, 180, 0.5); }
+.detail-card.cat-luck { box-shadow: 0 0 50px rgba(76, 175, 80, 0.1); border-color: rgba(76, 175, 80, 0.5); }
+.detail-card.cat-warning { box-shadow: 0 0 50px rgba(255, 68, 68, 0.1); border-color: rgba(255, 68, 68, 0.5); }
+.detail-card.cat-finance { box-shadow: 0 0 50px rgba(255, 215, 0, 0.1); border-color: rgba(255, 215, 0, 0.5); }
+
+.detail-title {
+  font-family: var(--font-serif);
+  font-size: 4rem;
+  margin: 0;
+  background: linear-gradient(to right, var(--accent-gold), #fff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.1;
+}
+
+.detail-category {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.main-meaning {
+  font-size: 1.8rem;
+  line-height: 1.4;
+  margin: 2rem 0;
+  color: #fff;
+  font-weight: 300;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 2rem;
+}
+
+.extended-meaning h3 {
+  font-family: var(--font-serif);
+  color: var(--accent-silver);
+  margin-bottom: 1rem;
+}
+
+.extended-meaning p {
+  color: #a0a0a0;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+/* Animations */
+.slide-in {
+  animation: slideIn 0.4s ease-out forwards;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 @media (max-width: 600px) {
-  h1 { font-size: 2rem; }
-  #root { padding: 1rem; }
-  .search-container { margin-bottom: 2rem; }
+  .detail-card { padding: 1.5rem; }
+  .detail-title { font-size: 2.5rem; }
+  .main-meaning { font-size: 1.4rem; }
 }
