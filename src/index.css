@@ -411,37 +411,60 @@ a {
   .main-meaning { font-size: 1.4rem; }
 }
 
-/* Footer */
+/* Footer - SleeperLens Style */
 .app-footer {
   text-align: center;
-  padding: 2rem 1rem 1rem;
+  padding: 3rem 1rem 1rem;
   margin-top: auto;
-  border-top: 1px solid rgba(255, 215, 0, 0.1);
+  border-top: none;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  opacity: 0.8;
 }
 
-.footer-links {
+.footer-links-main {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
+  gap: 2rem;
+  font-weight: 500;
+  font-size: 1rem;
 }
 
-.footer-links a {
-  color: var(--text-secondary);
+.footer-brand {
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.footer-links-legal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-links-legal a {
+  color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
 }
 
-.footer-links a:hover {
-  color: var(--accent-gold);
+.footer-links-legal a:hover {
+  color: #ffffff;
+}
+
+.separator {
+  font-size: 0.7rem;
+  opacity: 0.5;
 }
 
 .copyright {
-  color: var(--text-secondary);
-  font-size: 0.8rem;
-  opacity: 0.7;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 /* Legal Pages */
