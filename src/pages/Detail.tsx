@@ -47,7 +47,7 @@ export default function Detail() {
             <h3>Ähnliche Formen</h3>
             <div className="similar-grid">
               {allInterpretations
-                .filter(i => i.category === shape.category && i.id !== shape.id)
+                .filter(i => (i.shapeType && i.shapeType === shape.shapeType) && i.id !== shape.id)
                 .slice(0, 3)
                 .map(similar => (
                   <Link to={`/interpretation/${similar.id}`} key={similar.id} className="similar-item">
