@@ -46,7 +46,7 @@ export default function Home() {
   return (
     <div className="page-home">
       <div className="hero-section">
-        <h1>Molybdomancy</h1>
+        <h1>Neujahrs Orakel</h1>
         <p className="subtitle">Entdecke die Bedeutung deiner Form</p>
       </div>
 
