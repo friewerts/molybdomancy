@@ -23,6 +23,7 @@ export default function ImageAnalyzer({ onAnalysisComplete }: Props) {
     if (!file) return;
 
     try {
+      setAnalyzing(true);
       const img = document.createElement('img');
       img.src = URL.createObjectURL(file);
       await new Promise((resolve) => { img.onload = resolve; });
@@ -80,7 +81,9 @@ export default function ImageAnalyzer({ onAnalysisComplete }: Props) {
         title="Foto analysieren"
       >
         {analyzing ? (
-           <span className="animate-spin">↻</span>
+           <svg className="animate-spin" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+             <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+           </svg>
         ) : (
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>

@@ -64,15 +64,12 @@ h1 {
   z-index: 10;
 }
 
+/* RESTORED: Working absolute positioning */
 .search-input-wrapper {
-  display: grid;
-  grid-template-columns: auto 40px;
-  align-items: center;
   position: relative;
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
-  padding: 0 1rem 0 0;
   border-radius: 50px;
   border: 1px solid var(--accent-silver);
   background: rgba(255, 255, 255, 0.05);
@@ -86,20 +83,25 @@ h1 {
 }
 
 .search-input {
-  padding: 1rem 1rem 1rem 1.5rem;
+  width: 100%;
+  padding: 1rem 3.5rem 1rem 1.5rem;
   border: none;
   background: transparent;
   color: var(--text-color);
   font-size: 1.1rem;
-  border-radius: 50px; /* matched radius to ensure focus ring looks okay if browser adds one, but mostly for safety */
+  border-radius: 50px; 
 }
 
 .search-input:focus {
   outline: none;
-  box-shadow: none; /* Removed as wrapper handles glow */
+  box-shadow: none; 
 }
 
 .image-analyzer-trigger {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   align-items: center;
   height: 100%; 
@@ -116,7 +118,6 @@ h1 {
   justify-content: center;
   transition: all 0.3s;
   border-radius: 50%;
-  /* margin-right: 2px; removed - right on trigger now closer */
 }
 
 .camera-icon-btn:hover {
@@ -133,7 +134,9 @@ h1 {
 .animate-spin {
   display: inline-block;
   animation: spin 1s linear infinite;
-  font-size: 1.2rem;
+  width: 20px;
+  height: 20px;
+  color: var(--accent-gold);
 }
 
 @keyframes spin {
