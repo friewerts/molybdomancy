@@ -410,3 +410,133 @@ a {
   .detail-title { font-size: 2.5rem; }
   .main-meaning { font-size: 1.4rem; }
 }
+
+/* Footer */
+.app-footer {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--accent-gold);
+}
+
+.copyright {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* Legal Pages */
+.legal-content h2 {
+  color: var(--accent-gold);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.legal-content h3 {
+  color: var(--text-primary);
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+.legal-content p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+/* Cookie Banner - SleeperLens Style */
+.cookie-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 400px;
+  background: rgba(20, 20, 20, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.5rem;
+  z-index: 2000;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  animation: slideInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  font-size: 0.9rem;
+}
+
+.cookie-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  text-align: center;
+  color: #e0e0e0;
+}
+
+.cookie-buttons {
+  display: flex;
+  gap: 0.8rem;
+  width: 100%;
+}
+
+.btn-primary.small, .btn-secondary.small {
+  flex: 1;
+  padding: 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+/* Primary Action (Accept) */
+.btn-primary.small {
+  background: #ffffff;
+  color: #000000;
+}
+
+.btn-primary.small:hover {
+  background: #f0f0f0;
+  transform: translateY(-1px);
+}
+
+/* Secondary Action (Essential/Decline) */
+.btn-secondary.small {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.btn-secondary.small:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+@keyframes slideInUp {
+  from { transform: translate(-50%, 100%); opacity: 0; }
+  to { transform: translate(-50%, 0); opacity: 1; }
+}
+
+@media (min-width: 600px) {
+  .cookie-banner {
+    bottom: 30px;
+  }
+}
