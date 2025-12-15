@@ -84,6 +84,75 @@ h1 {
   box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
 }
 
+.analyzer-wrapper {
+  margin-top: 1rem;
+}
+
+.upload-btn {
+  background: transparent;
+  border: 1px solid var(--accent-silver);
+  color: var(--accent-silver);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+}
+
+.upload-btn:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.upload-btn:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.error-msg {
+  color: #ff4444;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.suggestions-container {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.suggestions-title {
+  font-size: 0.9rem;
+  color: var(--accent-silver);
+  margin-bottom: 0.5rem;
+}
+
+.suggestions-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.suggestion-chip {
+  background: rgba(255, 215, 0, 0.1);
+  color: var(--accent-gold);
+  border: 1px solid var(--accent-gold);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.suggestion-chip:hover {
+  background: var(--accent-gold);
+  color: var(--bg-dark);
+}
+
 /* Shape Grid */
 .shape-grid {
   display: grid;
