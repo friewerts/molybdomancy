@@ -10,13 +10,20 @@
   --font-serif: 'Playfair Display', serif;
 }
 
+
+html {
+  background-color: var(--bg-color); /* Fallback/Overscroll color */
+  height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: var(--font-main);
   background: radial-gradient(circle at 50% 0%, #1a1f35 0%, var(--bg-color) 100%);
+  background-attachment: fixed; /* Ensures gradient stays fixed during scroll */
   color: var(--text-color);
-  min-height: 100vh;
+  min-height: 100%;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -24,7 +31,14 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+  padding-top: max(2rem, env(safe-area-inset-top));
+  padding-bottom: max(2rem, env(safe-area-inset-bottom));
+  padding-left: max(2rem, env(safe-area-inset-left));
+  padding-right: max(2rem, env(safe-area-inset-right));
   text-align: center;
+  min-height: 100vh; /* Ensure footers stay down */
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
