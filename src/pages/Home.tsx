@@ -51,15 +51,15 @@ export default function Home() {
       </div>
 
       <div className="search-container">
-        <input
-          type="text"
-          placeholder="Suche nach Formen..."
-          value={query}
-          onChange={handleTextSearch}
-          className="search-input"
-          autoFocus
-        />
-        <div className="analyzer-wrapper">
+        <div className="search-input-wrapper">
+          <input
+            type="text"
+            placeholder="Suche nach Formen..."
+            value={query}
+            onChange={handleTextSearch}
+            className="search-input"
+            autoFocus
+          />
           <ImageAnalyzer onAnalysisComplete={handleImageAnalysis} />
         </div>
       </div>

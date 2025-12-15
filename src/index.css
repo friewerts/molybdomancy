@@ -64,56 +64,81 @@ h1 {
   z-index: 10;
 }
 
-.search-input {
+.search-input-wrapper {
+  display: grid;
+  grid-template-columns: auto 40px;
+  align-items: center;
+  position: relative;
   width: 100%;
   max-width: 600px;
-  padding: 1rem 1.5rem;
-  font-size: 1.2rem;
+  margin: 0 auto;
+  padding: 0 1rem 0 0;
   border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(13, 15, 26, 0.9);
+  border: 1px solid var(--accent-silver);
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
-  color: white;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
-.search-input:focus {
-  outline: none;
+.search-input-wrapper:focus-within {
   border-color: var(--accent-gold);
   box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
 }
 
-.analyzer-wrapper {
-  margin-top: 1rem;
-}
-
-.upload-btn {
+.search-input {
+  padding: 1rem 1rem 1rem 1.5rem;
+  border: none;
   background: transparent;
-  border: 1px solid var(--accent-silver);
+  color: var(--text-color);
+  font-size: 1.1rem;
+  border-radius: 50px; /* matched radius to ensure focus ring looks okay if browser adds one, but mostly for safety */
+}
+
+.search-input:focus {
+  outline: none;
+  box-shadow: none; /* Removed as wrapper handles glow */
+}
+
+.image-analyzer-trigger {
+  display: flex;
+  align-items: center;
+  height: 100%; 
+}
+
+.camera-icon-btn {
+  background: transparent;
+  border: none;
   color: var(--accent-silver);
-  padding: 0.5rem 1rem;
-  border-radius: 50px;
   cursor: pointer;
-  font-size: 0.9rem;
+  padding: 8px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: all 0.3s;
+  border-radius: 50%;
+  /* margin-right: 2px; removed - right on trigger now closer */
 }
 
-.upload-btn:hover {
-  border-color: var(--accent-gold);
+.camera-icon-btn:hover {
   color: var(--accent-gold);
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
 }
 
-.upload-btn:disabled {
+.camera-icon-btn:disabled {
   opacity: 0.5;
   cursor: wait;
 }
 
-.error-msg {
-  color: #ff4444;
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
+.animate-spin {
+  display: inline-block;
+  animation: spin 1s linear infinite;
+  font-size: 1.2rem;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .suggestions-container {
