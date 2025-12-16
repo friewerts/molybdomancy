@@ -10,10 +10,13 @@
   --font-serif: 'Playfair Display', serif;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 
 html {
-  background-color: var(--bg-color); /* Fallback/Overscroll color */
-  height: 100%;
+  overflow-x: hidden;
 }
 
 body {
