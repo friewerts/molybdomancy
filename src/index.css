@@ -16,6 +16,8 @@
 
 
 html {
+  background-color: var(--bg-color); /* Fallback/Overscroll color */
+  min-height: 100%;
   overflow-x: hidden;
 }
 
