@@ -108,7 +108,10 @@ h1 {
   background: transparent;
   color: var(--text-color);
   font-size: 1.1rem;
-  border-radius: 50px; 
+  line-height: normal; /* Fixes cursor alignment on iOS */
+  border-radius: 50px;
+  -webkit-appearance: none; /* Removes default iOS input styling */
+  appearance: none; 
 }
 
 .search-input:focus {
