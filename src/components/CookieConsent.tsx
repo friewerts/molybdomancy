@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 
-const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // Placeholder
+const GA_MEASUREMENT_ID = 'G-0P6QNGTZX0';
 
 export default function CookieConsent() {
   const [isVisible, setIsVisible] = useState(false);
