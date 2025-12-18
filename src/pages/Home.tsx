@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import ImageAnalyzer from '../components/ImageAnalyzer';
 import interpretationsData from '../data/interpretations.json';
 import type { Interpretation } from '../types';
-
+import { trackEvent } from '../utils/analytics';
 
 
 export default function Home() {
@@ -31,7 +31,13 @@ export default function Home() {
     return allInterpretations;
   }, [query, imageResults, allInterpretations]);
 
+
+  
   const handleImageAnalysis = (results: Interpretation[]) => {
+    trackEvent('scan_complete', {
+      result_count: results.length,
+      top_match: results[0]?.name || 'unknown'
+    });
     setQuery(''); // Clear text search
     setImageResults(results); // Set image results
   };

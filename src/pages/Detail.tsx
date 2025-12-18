@@ -1,12 +1,25 @@
 import { useParams, Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { trackEvent } from '../utils/analytics';
 import interpretationsData from '../data/interpretations.json';
 import type { Interpretation } from '../types';
 
 const allInterpretations: Interpretation[] = interpretationsData as Interpretation[];
 
 export default function Detail() {
+
+
   const { id } = useParams<{ id: string }>();
   const shape = allInterpretations.find(item => item.id === id);
+
+  useEffect(() => {
+    if (shape) {
+      trackEvent('view_shape', {
+        shape_id: shape.id,
+        category: shape.category || 'general'
+      });
+    }
+  }, [shape]);
 
   if (!shape) {
     return (

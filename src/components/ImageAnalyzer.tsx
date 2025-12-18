@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import { classifyImage } from '../services/vision';
+import { trackEvent } from '../utils/analytics';
 import { mobilenetToInterpretation } from '../utils/mapping';
 import interpretationsData from '../data/interpretations.json';
 import type { Interpretation } from '../types';
@@ -76,7 +77,10 @@ export default function ImageAnalyzer({ onAnalysisComplete }: Props) {
       
       <button 
         className="camera-icon-btn" 
-        onClick={() => fileInputRef.current?.click()}
+        onClick={() => {
+          trackEvent('scan_start');
+          fileInputRef.current?.click();
+        }}
         disabled={analyzing}
         title="Foto analysieren"
       >
